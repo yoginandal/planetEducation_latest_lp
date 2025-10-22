@@ -1,57 +1,46 @@
-/* eslint-disable react/prop-types */
-"use client";
+import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { cn } from "@/app/lib/utils";
+import { useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-export default function WordPullUp({
+export const WordPullUp = ({
   words,
-
+  className,
   wrapperFramerProps = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Stagger the animation for each word
-        delayChildren: 0.2, // Delay before starting to stagger the words
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   },
-
   framerProps = {
     hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1 },
+    show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   },
-
-  className,
-}) {
-  // Detect when the component is near the center of the viewport
-  const { ref, inView } = useInView({
-    threshold: 0.5, // Trigger when 50% of the component is visible
-    rootMargin: "-5% 0px -20% 0px", // Start animation when component is 20% above the center
-    triggerOnce: false, // Animate every time the component enters the viewport
-  });
+}) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <motion.h2
-      ref={ref} // Attach ref to the element to track its visibility
+    <motion.div
+      ref={ref}
       variants={wrapperFramerProps}
       initial="hidden"
-      animate={inView ? "show" : "hidden"} // Animate only when the component is in view
-      className={cn(
-        "font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
-        className
-      )}
+      animate={isInView ? "show" : "hidden"}
+      className={cn("font-display text-center font-bold tracking-tight", className)}
     >
       {words.split(" ").map((word, i) => (
         <motion.span
           key={i}
-          variants={framerProps} // Animate each word separately
+          variants={framerProps}
           style={{ display: "inline-block", paddingRight: "8px" }}
         >
           {word === "" ? <span>&nbsp;</span> : word}
         </motion.span>
       ))}
-    </motion.h2>
+    </motion.div>
   );
-}
+};

@@ -354,7 +354,7 @@ const HeroSection = () => {
                 }`}
                 required
               >
-                <option value="" disabled selected hidden>
+                <option value="" disabled hidden>
                   Preferred Study Destination
                 </option>
                 <option value="Australia">Australia</option>
@@ -383,7 +383,7 @@ const HeroSection = () => {
                 }`}
                 required
               >
-                <option value="" disabled selected hidden>
+                <option value="" disabled hidden>
                   Current Level of Education
                 </option>
                 <option value="12th Pass">12th Pass</option>
@@ -407,7 +407,7 @@ const HeroSection = () => {
                 }`}
                 required
               >
-                <option value="" disabled selected hidden>
+                <option value="" disabled hidden>
                   Any Language Test Taken?
                 </option>
                 <option value="IELTS">IELTS</option>
