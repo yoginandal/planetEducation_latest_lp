@@ -72,10 +72,10 @@ const About = () => {
   };
 
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-slate-50 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-6">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 md:mb-16 text-center">
           <Badge className="mx-auto px-4 py-1.5 bg-white border border-slate-200 text-slate-700 uppercase tracking-wide rounded-md text-xs font-medium shadow-none">
             Excellence in Leadership Development
           </Badge>
@@ -92,7 +92,7 @@ const About = () => {
         </div>
 
         {/* Stats with Animation */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 md:mb-16">
           {stats.map(({ value, label, icon: Icon }, index) => (
             <div
               key={label}
@@ -113,7 +113,7 @@ const About = () => {
         </div>
 
         {/* Image + Features */}
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-12 md:mb-16">
           {/* Left: Unsplash Image with Animations */}
           <div className="relative group">
             <div className="relative rounded-xl overflow-hidden shadow-xl transform group-hover:scale-105 transition-all duration-700">
@@ -131,7 +131,7 @@ const About = () => {
               {/* Floating Achievement Badge */}
               <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl transform -translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-100">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-slate-900 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-linear-to-br from-blue-900 to-slate-900 rounded-full flex items-center justify-center shadow-lg">
                     <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                   <div>

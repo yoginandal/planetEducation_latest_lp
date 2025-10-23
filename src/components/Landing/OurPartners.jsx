@@ -71,10 +71,10 @@ const GlobalPartnerships = () => {
   );
 
   return (
-    <section className="py-20 bg-slate-200">
+    <section className="py-12 md:py-20 bg-slate-200">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-slate-900 rounded-full"></span>
             <span className="text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase">

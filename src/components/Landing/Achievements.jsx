@@ -57,7 +57,7 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 overflow-hidden">
+    <section className="relative py-20 bg-linear-to-br from-blue-900 via-indigo-900 to-blue-800 overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-64 h-64 border border-white/20 rounded-full"></div>

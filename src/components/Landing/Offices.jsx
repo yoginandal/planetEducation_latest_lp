@@ -279,7 +279,7 @@ const GlobalOffices = () => {
                       <div className="space-y-4">
                         {/* Address */}
                         <div className="flex items-start gap-3">
-                          <MapPin className="w-5 h-5 text-slate-900 flex-shrink-0 mt-0.5" />
+                          <MapPin className="w-5 h-5 text-slate-900 shrink-0 mt-0.5" />
                           <p className="text-sm text-slate-600 leading-relaxed">
                             {office.address}
                           </p>
@@ -287,7 +287,7 @@ const GlobalOffices = () => {
 
                         {/* Phone */}
                         <div className="flex items-start gap-3">
-                          <Phone className="w-5 h-5 text-slate-900 flex-shrink-0 mt-0.5" />
+                          <Phone className="w-5 h-5 text-slate-900 shrink-0 mt-0.5" />
                           <a
                             href={`tel:${office.phone.split("|")[0].trim()}`}
                             className="text-sm text-slate-600 hover:text-slate-900 transition-colors"
@@ -298,7 +298,7 @@ const GlobalOffices = () => {
 
                         {/* Contact Person */}
                         <div className="flex items-start gap-3">
-                          <User className="w-5 h-5 text-slate-900 flex-shrink-0 mt-0.5" />
+                          <User className="w-5 h-5 text-slate-900 shrink-0 mt-0.5" />
                           <p className="text-sm font-semibold text-slate-900">
                             {office.contactPerson}
                           </p>
@@ -306,7 +306,7 @@ const GlobalOffices = () => {
 
                         {/* Email */}
                         <div className="flex items-start gap-3">
-                          <Mail className="w-5 h-5 text-slate-900 flex-shrink-0 mt-0.5" />
+                          <Mail className="w-5 h-5 text-slate-900 shrink-0 mt-0.5" />
                           <a
                             href={`mailto:${office.email}`}
                             className="text-sm text-slate-600 hover:text-slate-900 transition-colors break-all"

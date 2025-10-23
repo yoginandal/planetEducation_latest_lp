@@ -207,7 +207,7 @@ const HeroSection = () => {
     <main className="container mx-auto max-screen-xl px-4 py-4 sm:py-8 flex flex-col text-center md:text-right md:flex-row gap-0 items-center md:items-end justify-between">
       <div
         id="apply-now"
-        className="relative top-68 sm:top-0 md:ml-auto bg-gradient-to-br from-[#f6cb3d] via-[#f6d03d] to-[#f6cb3d]/90 p-6 pt-12 shadow-xl max-w-[380px] custom-div rounded-xl border border-yellow-300/20"
+        className="relative top-68 sm:top-0 md:ml-auto bg-linear-to-br from-[#f6cb3d] via-[#f6d03d] to-[#f6cb3d]/90 p-6 pt-12 shadow-xl max-w-[380px] custom-div rounded-xl border border-yellow-300/20"
       >
         <div className="relative">
           <div className="text-center mb-6">

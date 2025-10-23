@@ -93,10 +93,10 @@ const NUSColleges = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-200">
+    <section className="py-16 md:py-24 bg-slate-200">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <Badge className="mx-auto px-4 py-1.5 bg-white border border-slate-200 text-slate-700 uppercase tracking-wide rounded-md text-xs font-medium shadow-none mb-6">
             Academic Excellence
           </Badge>
@@ -154,7 +154,7 @@ const NUSColleges = () => {
                       </div>
                     </div>
                     <div
-                      className={`w-12 h-12 rounded-lg bg-gradient-to-br ${college.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-12 h-12 rounded-lg bg-linear-to-br ${college.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                     >
                       <GraduationCap className="w-6 h-6 text-white" />
                     </div>
@@ -169,7 +169,7 @@ const NUSColleges = () => {
         <Card className="bg-slate-50 border-2 border-slate-200">
           <CardContent className="p-8">
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 bg-linear-to-br from-blue-600 to-purple-600 rounded-full items-center justify-center shrink-0 hidden md:flex">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <div className="flex-1">

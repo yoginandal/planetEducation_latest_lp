@@ -108,7 +108,7 @@ const NUSProgramSection = () => {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-slate-50 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-200/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
@@ -117,8 +117,8 @@ const NUSProgramSection = () => {
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full mb-6">
+        <div className="text-center mb-12 md:mb-20">
+          <div className="inline-flex items-center bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full mb-6">
             <GraduationCap className="w-4 h-4 mr-2" />
             <span className="text-sm font-semibold uppercase tracking-wide">
               National University of Singapore
@@ -137,15 +137,15 @@ const NUSProgramSection = () => {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-20">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 bg-gradient-to-br ${program.bgColor}`}
+              className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1 bg-linear-to-br ${program.bgColor}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                className={`absolute inset-0 bg-linear-to-br ${program.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
               ></div>
 
               <div className="relative h-64 overflow-hidden">
@@ -155,7 +155,7 @@ const NUSProgramSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                 />
                 <div
-                  className={`absolute top-4 left-4 bg-gradient-to-r ${program.color} text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg`}
+                  className={`absolute top-4 left-4 bg-linear-to-r ${program.color} text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg`}
                 >
                   MTech {program.abbr}
                 </div>
@@ -179,7 +179,7 @@ const NUSProgramSection = () => {
                         className="flex items-start gap-3 group/item"
                       >
                         <div
-                          className={`p-1 rounded-full bg-gradient-to-br ${program.color} group-hover/item:scale-110 transition-transform duration-300`}
+                          className={`p-1 rounded-full bg-linear-to-br ${program.color} group-hover/item:scale-110 transition-transform duration-300`}
                         >
                           <CheckCircle2 className="w-4 h-4 text-white" />
                         </div>
@@ -193,7 +193,7 @@ const NUSProgramSection = () => {
 
                 <Button
                   onClick={scrollToForm}
-                  className={`w-full bg-gradient-to-r ${program.color} hover:${program.hoverColor} text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group/btn`}
+                  className={`w-full bg-linear-to-r ${program.color} hover:${program.hoverColor} text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group/btn`}
                 >
                   <span>Apply for {program.abbr}</span>
                   <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-2 transition-transform duration-300" />
@@ -204,11 +204,11 @@ const NUSProgramSection = () => {
         </div>
 
         {/* Application Process Section */}
-        <div className="border-t border-slate-200 pt-16 mb-20">
-          <div className="grid lg:grid-cols-2 gap-12">
+        <div className="border-t border-slate-200 pt-12 md:pt-16 mb-12 md:mb-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Left - Application Process */}
             <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight flex items-center gap-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 tracking-tight flex items-center gap-3">
                 <FileText className="w-8 h-8 text-blue-600" />
                 Application Process
               </h3>
@@ -216,7 +216,7 @@ const NUSProgramSection = () => {
               <div className="space-y-6">
                 <div className="bg-white/80 backdrop-blur-sm border border-blue-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                    <div className="w-10 h-10 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                       1
                     </div>
                     <div className="flex-1">
@@ -242,7 +242,7 @@ const NUSProgramSection = () => {
 
                 <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                    <div className="w-10 h-10 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                       2
                     </div>
                     <div className="flex-1">
@@ -259,7 +259,7 @@ const NUSProgramSection = () => {
 
                 <div className="bg-white/80 backdrop-blur-sm border border-purple-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                    <div className="w-10 h-10 bg-linear-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                       3
                     </div>
                     <div className="flex-1">
@@ -300,11 +300,11 @@ const NUSProgramSection = () => {
 
             {/* Right - Key Details */}
             <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-6 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 md:mb-6 tracking-tight">
                 Program Highlights
               </h3>
 
-              <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 shadow-xl mb-8">
+              <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-6 md:p-8 shadow-xl mb-6 md:mb-8">
                 <div className="space-y-6">
                   {keyDetails.map(
                     (
@@ -313,12 +313,12 @@ const NUSProgramSection = () => {
                     ) => (
                       <div
                         key={label}
-                        className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-slate-50 rounded-2xl border border-slate-200/50 hover:border-slate-300 transition-all duration-300 hover:shadow-lg"
+                        className="flex items-center justify-between p-6 bg-linear-to-r from-white to-slate-50 rounded-2xl border border-slate-200/50 hover:border-slate-300 transition-all duration-300 hover:shadow-lg"
                         style={{ transitionDelay: `${index * 100}ms` }}
                       >
                         <div className="flex items-center space-x-4">
                           <div
-                            className={`w-12 h-12 bg-gradient-to-br ${color} rounded-full flex items-center justify-center`}
+                            className={`w-12 h-12 bg-linear-to-br ${color} rounded-full flex items-center justify-center`}
                           >
                             <Icon className="w-6 h-6 text-white" />
                           </div>
@@ -343,9 +343,11 @@ const NUSProgramSection = () => {
               </div>
 
               {/* Additional Info Card */}
-              <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 text-white">
+              <Card className="bg-linear-to-r from-blue-600 to-purple-600 border-0 text-white text-center lg:text-left">
                 <CardContent className="p-8">
-                  <Users className="w-10 h-10 mb-4" />
+                  <div className="flex justify-center lg:justify-start">
+                    <Users className="w-10 h-10 mb-4" />
+                  </div>
                   <h4 className="text-xl font-bold mb-3">Freshers Welcome!</h4>
                   <p className="text-blue-100 leading-relaxed mb-4">
                     All programs welcome fresh graduates. Relevant working
