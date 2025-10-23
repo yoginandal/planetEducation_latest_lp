@@ -7,10 +7,8 @@ const HeroSection = () => {
     Name: "",
     email: "",
     phone: "",
+    qualification: "",
     current_city: "",
-    preferred_study_destination: "",
-    current_level_of_education: "",
-    language_test_taken: "",
     utm_source: "",
     utm_medium: "",
     utm_campaign: "",
@@ -121,6 +119,10 @@ const HeroSection = () => {
         // Don't show email error while typing
         break;
 
+      case "qualification":
+        // No real-time validation needed for select
+        break;
+
       default:
         break;
     }
@@ -175,17 +177,8 @@ const HeroSection = () => {
         : "City can only contain letters and spaces.";
     }
 
-    if (!formData.preferred_study_destination) {
-      newErrors.preferred_study_destination = "Please select a destination.";
-    }
-
-    if (!formData.current_level_of_education) {
-      newErrors.current_level_of_education =
-        "Please select your education level.";
-    }
-
-    if (!formData.language_test_taken) {
-      newErrors.language_test_taken = "Please select a language test option.";
+    if (!formData.qualification) {
+      newErrors.qualification = "Please select your qualification.";
     }
 
     // If there are any errors, don't submit
@@ -209,9 +202,7 @@ const HeroSection = () => {
             email: formData.email,
             phone: formData.phone,
             current_city: formData.current_city,
-            preferred_study_destination: formData.preferred_study_destination,
-            current_level_of_education: formData.current_level_of_education,
-            language_test_taken: formData.language_test_taken,
+            qualification: formData.qualification,
             utm_source: formData.utm_source,
             utm_medium: formData.utm_medium,
             utm_campaign: formData.utm_campaign,
@@ -258,181 +249,107 @@ const HeroSection = () => {
       {/* Right Form */}
       <div
         id="apply-now"
-        className="relative top-68 sm:top-0 md:ml-auto bg-linear-to-br from-[#f6cb3d] to-[#f6cb3d]/90 p-6 pt-14! shadow-xl max-w-[400px] custom-div rounded-sm"
+        className="relative top-68 sm:top-0 md:ml-auto bg-gradient-to-br from-[#f6cb3d] via-[#f6d03d] to-[#f6cb3d]/90 p-6 pt-12 shadow-xl max-w-[380px] custom-div rounded-xl border border-yellow-300/20"
       >
         <div className="relative">
-          <h3 className="text-lg sm:text-xl text-center font-bold text-black">
-            Sign-up to choose your best-fit
-          </h3>
-          <h3 className="text-lg sm:text-xl text-center font-bold text-black">
-            university or college with our
-          </h3>
-          <h3 className="text-lg sm:text-xl text-center font-bold text-black mb-6">
-            expert counselors.
-          </h3>
+          {/* Form Header */}
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-black mb-1">
+              Start Your Journey
+            </h3>
+            <p className="text-black/70 text-xs">Get expert guidance today</p>
+          </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <div>
-              <input
-                name="Name"
-                value={formData.Name}
-                onChange={handleChange}
-                placeholder="Name"
-                className={`w-full bg-white p-2 ${
-                  errors.Name ? "border-red-500 border" : ""
-                }`}
-                required
-              />
-              {errors.Name && (
-                <p className="text-red-500 text-xs mt-1">{errors.Name}</p>
-              )}
-            </div>
+            <input
+              name="Name"
+              value={formData.Name}
+              onChange={handleChange}
+              placeholder="Name"
+              className={`w-full bg-white p-3 rounded-lg border ${
+                errors.Name ? "border-red-400" : "border-gray-200"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+              required
+            />
+            {errors.Name && (
+              <p className="text-red-600 text-xs mt-1">{errors.Name}</p>
+            )}
 
-            <div>
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Email"
-                type="email"
-                className={`w-full bg-white p-2 ${
-                  errors.email ? "border-red-500 border" : ""
-                }`}
-                required
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-              )}
-            </div>
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="Email"
+              type="email"
+              className={`w-full bg-white p-3 rounded-lg border ${
+                errors.email ? "border-red-400" : "border-gray-200"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+              required
+            />
+            {errors.email && (
+              <p className="text-red-600 text-xs mt-1">{errors.email}</p>
+            )}
 
-            <div>
-              <input
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone"
-                type="tel"
-                maxLength="10"
-                className={`w-full bg-white p-2 ${
-                  errors.phone ? "border-red-500 border" : ""
-                }`}
-                required
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
-              )}
-            </div>
+            <input
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone"
+              type="tel"
+              maxLength="10"
+              className={`w-full bg-white p-3 rounded-lg border ${
+                errors.phone ? "border-red-400" : "border-gray-200"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+              required
+            />
+            {errors.phone && (
+              <p className="text-red-600 text-xs mt-1">{errors.phone}</p>
+            )}
 
-            <div>
-              <input
-                name="current_city"
-                value={formData.current_city}
-                onChange={handleChange}
-                placeholder="City"
-                className={`w-full bg-white p-2 ${
-                  errors.current_city ? "border-red-500 border" : ""
-                }`}
-                required
-              />
-              {errors.current_city && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.current_city}
-                </p>
-              )}
-            </div>
+            <select
+              name="qualification"
+              value={formData.qualification}
+              onChange={handleChange}
+              className={`w-full bg-white p-3 rounded-lg border ${
+                errors.qualification ? "border-red-400" : "border-gray-200"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+              required
+            >
+              <option value="" disabled hidden>
+                Select Qualification
+              </option>
+              <option value="12th">12th</option>
+              <option value="Graduate">Graduate</option>
+            </select>
+            {errors.qualification && (
+              <p className="text-red-600 text-xs mt-1">
+                {errors.qualification}
+              </p>
+            )}
 
-            <div>
-              <select
-                name="preferred_study_destination"
-                value={formData.preferred_study_destination}
-                onChange={handleChange}
-                className={`w-full bg-white p-2 ${
-                  errors.preferred_study_destination
-                    ? "border-red-500 border"
-                    : ""
-                }`}
-                required
-              >
-                <option value="" disabled hidden>
-                  Preferred Study Destination
-                </option>
-                <option value="Australia">Australia</option>
-                <option value="UK">UK</option>
-                <option value="USA">USA</option>
-                <option value="Canada">Canada</option>
-                <option value="New Zealand">New Zealand</option>
-                <option value="Singapore">Singapore</option>
-              </select>
-              {errors.preferred_study_destination && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.preferred_study_destination}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <select
-                name="current_level_of_education"
-                value={formData.current_level_of_education}
-                onChange={handleChange}
-                className={`w-full bg-white p-2 ${
-                  errors.current_level_of_education
-                    ? "border-red-500 border"
-                    : ""
-                }`}
-                required
-              >
-                <option value="" disabled hidden>
-                  Current Level of Education
-                </option>
-                <option value="12th Pass">12th Pass</option>
-                <option value="Graduate">Graduate</option>
-                <option value="Post Graduate">Post Graduate</option>
-              </select>
-              {errors.current_level_of_education && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.current_level_of_education}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <select
-                name="language_test_taken"
-                value={formData.language_test_taken}
-                onChange={handleChange}
-                className={`w-full bg-white p-2 ${
-                  errors.language_test_taken ? "border-red-500 border" : ""
-                }`}
-                required
-              >
-                <option value="" disabled hidden>
-                  Any Language Test Taken?
-                </option>
-                <option value="IELTS">IELTS</option>
-                <option value="TOEFL">TOEFL</option>
-                <option value="PTE">PTE</option>
-                <option value="Duolingo">Duolingo</option>
-                <option value="Others">Others</option>
-                <option value="None">None</option>
-              </select>
-              {errors.language_test_taken && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.language_test_taken}
-                </p>
-              )}
-            </div>
+            <input
+              name="current_city"
+              value={formData.current_city}
+              onChange={handleChange}
+              placeholder="City"
+              className={`w-full bg-white p-3 rounded-lg border ${
+                errors.current_city ? "border-red-400" : "border-gray-200"
+              } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+              required
+            />
+            {errors.current_city && (
+              <p className="text-red-600 text-xs mt-1">{errors.current_city}</p>
+            )}
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`px-10 rounded-sm py-2 block mx-auto bg-[#1a237e] hover:bg-[#1a237e]/90 text-white text-[1.4rem] font-normal ${
+              className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
                 isSubmitting
-                  ? "opacity-50 cursor-not-allowed"
-                  : "animate-bounce"
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-[#1a237e] hover:bg-[#1a237e]/90 hover:shadow-lg transform hover:-translate-y-0.5"
               }`}
-              style={{ marginTop: "2.5rem" }}
             >
               {isSubmitting ? "Submitting..." : "Register Now"}
             </button>
