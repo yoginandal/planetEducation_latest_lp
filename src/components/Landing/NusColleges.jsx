@@ -93,7 +93,7 @@ const NUSColleges = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-slate-200">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">

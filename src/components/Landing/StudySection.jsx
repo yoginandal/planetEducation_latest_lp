@@ -108,7 +108,7 @@ const NUSProgramSection = () => {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 overflow-hidden">
+    <section className="relative py-24 bg-slate-50 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-200/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>

@@ -14,7 +14,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-200">
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Bottom CTA Banner */}
         <Card className="bg-gradient-to-r from-slate-900 to-blue-900 border-0 text-white overflow-hidden relative">
