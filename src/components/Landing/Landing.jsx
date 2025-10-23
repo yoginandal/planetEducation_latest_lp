@@ -4,12 +4,13 @@ import HeroSection from "./HeroSection";
 import About from "./About";
 import heroBg from "../../assets/hero-bg.webp";
 import heroBgMobile from "../../assets/hero-mobile-bg.webp";
-import Achievements from "./Achievements";
+import NUSColleges from "./NUSColleges";
+// import Achievements from "./Achievements";
 import StudySection from "./StudySection";
 import OurPartners from "./OurPartners";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
-import Offices from "./Offices";
+// import Offices from "./Offices";
 
 const Landing = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -48,11 +49,12 @@ const Landing = () => {
         <HeroSection />
       </div>
       <About />
-      <Achievements />
+      <NUSColleges />
+      {/* <Achievements /> */}
       <StudySection />
       <OurPartners />
       <Testimonials />
-      <Offices />
+      {/* <Offices /> */}
       <CTA />
     </>
   );

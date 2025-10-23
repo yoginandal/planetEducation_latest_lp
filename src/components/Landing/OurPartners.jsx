@@ -7,79 +7,62 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import anu from "../../assets/logos/anu.png";
-import brunel from "../../assets/logos/Brunel University London.png";
-import charles from "../../assets/logos/Charles Darwin University Scholarships.png";
-import cqu from "../../assets/logos/cqu university.png";
-import deakin from "../../assets/logos/Deakin University.png";
-import james from "../../assets/logos/james-cook-university.png";
-import la from "../../assets/logos/La Trobe University.png";
-import macquarie from "../../assets/logos/Macquarie University.png";
-import monash from "../../assets/logos/monash-university.png";
-import murdoch from "../../assets/logos/MURDOCH UNIVERSITY.png";
-import rmit from "../../assets/logos/RMIT.png";
-import sydney from "../../assets/logos/su.png";
-import technology from "../../assets/logos/University of Technology - Sydney.png";
-import unsw from "../../assets/logos/UNSW Scholarships.png";
-import uq from "../../assets/logos/uq.png";
-import victoria from "../../assets/logos/Victoria University.png";
-import western from "../../assets/logos/Western Sydney University.png";
+// import anu from "../../assets/logos/anu.png";
+// import brunel from "../../assets/logos/Brunel University London.png";
+// import charles from "../../assets/logos/Charles Darwin University Scholarships.png";
+// import cqu from "../../assets/logos/cqu university.png";
+// import deakin from "../../assets/logos/Deakin University.png";
+// import james from "../../assets/logos/james-cook-university.png";
+// import la from "../../assets/logos/La Trobe University.png";
+// import macquarie from "../../assets/logos/Macquarie University.png";
+// import monash from "../../assets/logos/monash-university.png";
+// import murdoch from "../../assets/logos/MURDOCH UNIVERSITY.png";
+// import rmit from "../../assets/logos/RMIT.png";
+// import sydney from "../../assets/logos/su.png";
+// import technology from "../../assets/logos/University of Technology - Sydney.png";
+// import unsw from "../../assets/logos/UNSW Scholarships.png";
+// import uq from "../../assets/logos/uq.png";
+// import victoria from "../../assets/logos/Victoria University.png";
+// import western from "../../assets/logos/Western Sydney University.png";
 
 const GlobalPartnerships = () => {
   // University logo URLs - Replace with your actual partner university logos
   const partnerLogos = [
     {
-      name: "Australian National University",
-      logo: anu,
+      name: "Grab",
+      logo: "https://nus.edu.sg/research/images/default-source/partners/grab.png?Status=Temp&sfvrsn=5f11e89f_8",
     },
     {
-      name: "Brunel University London",
-      logo: brunel,
+      name: "Exxonmobil",
+      logo: "https://nus.edu.sg/research/images/default-source/partners/exxonmobil.png?Status=Temp&sfvrsn=34a0906c_6",
     },
     {
-      name: "Charles Darwin University",
-      logo: charles,
-    },
-    { name: "CQU University", logo: cqu },
-    {
-      name: "Deakin University",
-      logo: deakin,
+      name: "Ezlink",
+      logo: "https://www.jedox.com/wp-content/uploads/2022/11/logo-ez-link-600x400px.png",
     },
     {
-      name: "James Cook University",
-      logo: james,
+      name: "Alibaba Cloud",
+      logo: "https://su.ultrasite.com/170_a_7103_ee80b992.png",
     },
     {
-      name: "La Trobe University",
-      logo: la,
+      name: "StarHub",
+      logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/StarHub_%282021%29.svg/1200px-StarHub_%282021%29.svg.png",
     },
     {
-      name: "Macquarie University",
-      logo: macquarie,
+      name: "ComfortDelgro",
+      logo: "https://static.cdnlogo.com/logos/c/17/comfortdelgro_thumb.png",
     },
     {
-      name: "Monash University",
-      logo: monash,
+      name: "Veniam",
+      logo: "https://www.ciscoinvestments.com/assets/logos/veniam.png",
     },
     {
-      name: "Murdoch University",
-      logo: murdoch,
-    },
-    { name: "RMIT University", logo: rmit },
-    { name: "Sydney University", logo: sydney },
-    {
-      name: "University of Technology Sydney",
-      logo: technology,
-    },
-    { name: "UNSW Sydney", logo: unsw },
-    { name: "University of Queensland", logo: uq },
-    {
-      name: "Victoria University",
-      logo: victoria,
+      name: "Microsoft",
+      logo: "https://nus.edu.sg/research/images/default-source/partners/microsoft.png?Status=Temp&sfvrsn=e6b10a4_8",
     },
     {
-      name: "Western Sydney University",
-      logo: western,
+      name: "CDL",
+      logo: "https://nus.edu.sg/research/images/default-source/partners/cdl.png?Status=Temp&sfvrsn=cfc8908d_6monash",
     },
   ];
 
@@ -95,12 +78,12 @@ const GlobalPartnerships = () => {
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-2 h-2 bg-slate-900 rounded-full"></span>
             <span className="text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase">
-              Our Global Partnerships
+              Our Recent Research Partnerships
             </span>
             <span className="w-2 h-2 bg-slate-900 rounded-full"></span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Trusted by Leading Universities
+            Trusted by Leading Companies
           </h2>
         </div>
 
@@ -121,7 +104,7 @@ const GlobalPartnerships = () => {
                 key={index}
                 className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
               >
-                <div className="flex items-center justify-center h-32 bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300 grayscale hover:grayscale-0">
+                <div className="flex items-center justify-center h-32 bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md hover:scale-105 transition-all duration-300">
                   <img
                     src={partner.logo}
                     alt={partner.name}
@@ -136,8 +119,8 @@ const GlobalPartnerships = () => {
         {/* Bottom Text */}
         <div className="text-center mt-12">
           <p className="text-slate-600 text-sm">
-            And <span className="font-semibold">350+ more universities</span>{" "}
-            across UK, USA, Canada, Australia, New Zealand, and Singapore
+            And <span className="font-semibold">350+ more companies</span>{" "}
+            across Singapore
           </p>
         </div>
       </div>

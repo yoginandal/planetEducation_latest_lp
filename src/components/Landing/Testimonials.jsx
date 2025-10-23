@@ -14,40 +14,28 @@ import { Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Hemanth Rajkumar",
-      university: "UTS, Sydney",
-      program: "Masters in Marketing",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5cd4cc35fd679362f1f3ebbc/1571657812485-N9YN8GNGZ9BV8KC56KDJ/hemanth.jpg",
+      name: "Wilson Lam Wee Shen",
+      university: "FASS Scholarship Recipient in AY2011",
+      program: "Political Science Major",
+      image: "https://fass.nus.edu.sg/wp-content/uploads/2020/07/janvin.jpg",
       quote:
-        "Planet Education is the right choice for a hassle-free application with continuous updates. Now, I'm a student at UTS, Sydney, and all credit goes to Mr. Vasantosh and his team.",
+        "The FASS Scholarship made my fulfilling academic journey possible, especially with my father as the sole breadwinner. It allowed me to pursue my honours thesis and gain valuable internships with civil service agencies. I am grateful for this gift of education, which enables my dream of a civil service career upon graduation.",
     },
     {
-      name: "Prachit Desai",
-      university: "Campus Coventry",
-      program: "BSc Honors in Aviation Management",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5cd4cc35fd679362f1f3ebbc/1585728584863-B7GTIVJSLY4XEIM0JR1O/Asset%2B3.png",
+      name: "Athel Hu",
+      university: "FASS bursary recipient in AY2007",
+      program: "Sociology Major",
+      image: "https://fass.nus.edu.sg/wp-content/uploads/2020/07/athel.gif",
       quote:
-        "With the help of the staff, I faced no issues with my visa and admission for Campus Coventry. I'm proud to say I got my visa in just 64 hours.",
+        "Receiving bursary support motivated me to study harder and succeed, even while caring for my mum. Now, I regularly contribute back to the gift funds. My dream is to establish a fund in my parents' name to help needy students, as giving back to society is my constant motivation to strive in life.",
     },
     {
-      name: "Smit Shah",
-      university: "Griffith University",
-      program: "",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5cd4cc35fd679362f1f3ebbc/1585728699955-O0OMT2FZS92P74FVC7ZL/Smit.png",
+      name: "Gurshan Singh",
+      university: "bursary award recipient in AY2009",
+      program: "Political Science Major",
+      image: "https://fass.nus.edu.sg/wp-content/uploads/2020/07/gurham.gif",
       quote:
-        "A friend recommended Planet Education. After their counseling, I selected Griffith University. The process was smooth, and I received my COE as planned.",
-    },
-    {
-      name: "Pramash Panchal",
-      university: "Canada",
-      program: "",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5cd4cc35fd679362f1f3ebbc/1585728615480-8WZ7IOQ48H2H3M9B13P6/Asset%2B4.png",
-      quote:
-        "Thanks to the team's guidance, I got my admission in Canada. I found Planet Education to be the best and most helpful consultancy. I received my visa in just 15 days!",
+        "I lost my father to a sudden heart attack in 2010 and as the eldest of four children has a lot depending on my success. My mother, who is not in good health works as a kitchen helper. This bursary is my safety net. It gives me peace of mind that I will not be caught out by a sudden expenditure.",
     },
   ];
 
