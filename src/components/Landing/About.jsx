@@ -72,16 +72,16 @@ const About = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-slate-50 overflow-hidden">
+    <section className="relative py-16 md:py-0 md:pt-16 md:pb-2 bg-slate-50 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-6">
         {/* Header */}
         <div className="mb-12 md:mb-16 text-center">
-          <Badge className="mx-auto px-4 py-1.5 bg-white border border-slate-200 text-slate-700 uppercase tracking-wide rounded-md text-xs font-medium shadow-none">
+          {/* <Badge className="mx-auto px-4 py-1.5 bg-white border border-slate-200 text-slate-700 uppercase tracking-wide rounded-md text-xs font-medium shadow-none">
             Excellence in Leadership Development
-          </Badge>
+          </Badge> */}
 
           <WordPullUp
-            className="mt-6 text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight"
+            className="mt-6 text-2xl md:text-4xl lg:text-4xl font-bold text-slate-900 leading-tight tracking-tight"
             words="Developing infocomm leaders that drive business & organisation innovation"
           />
 
@@ -113,8 +113,8 @@ const About = () => {
         </div>
 
         {/* Image + Features */}
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-12 md:mb-16">
-          {/* Left: Unsplash Image with Animations */}
+        {/* <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-12 md:mb-16">
+         
           <div className="relative group">
             <div className="relative rounded-xl overflow-hidden shadow-xl transform group-hover:scale-105 transition-all duration-700">
               <img
@@ -123,12 +123,12 @@ const About = () => {
                 className="object-cover w-full h-[420px] grayscale group-hover:grayscale-0 transition-all duration-700"
               />
 
-              {/* Floating Badge */}
+              
               <div className="absolute bottom-0 left-0 bg-white/90 px-6 py-3 rounded-tr-lg shadow-lg text-slate-900 text-base font-medium transform group-hover:translate-y-0 transition-all duration-500">
                 Transforming business landscapes globally
               </div>
 
-              {/* Floating Achievement Badge */}
+              
               <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl transform -translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-100">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-linear-to-br from-blue-900 to-slate-900 rounded-full flex items-center justify-center shadow-lg">
@@ -147,7 +147,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right: Features with Animation */}
+          
           <div>
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-2">
@@ -194,7 +194,7 @@ const About = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

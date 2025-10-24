@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { WordPullUp } from "@/components/ui/word-pull-up";
+import { WordFadeIn } from "@/components/ui/word-fade-in";
 import { MapPin, Phone, Mail, User } from "lucide-react";
 
 const GlobalOffices = () => {
@@ -237,13 +239,14 @@ const GlobalOffices = () => {
             </span>
             <span className="w-2 h-2 bg-slate-900 rounded-full"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-            Our Office Locations
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Visit us at any of our offices across multiple countries. Our expert
-            counselors are ready to guide you on your study abroad journey.
-          </p>
+          <WordPullUp
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
+            words="Our Office Locations"
+          />
+          <WordFadeIn
+            className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto"
+            words="Visit us at any of our offices across multiple countries. Our expert counselors are ready to guide you on your study abroad journey"
+          />
         </div>
 
         {/* Country Tabs */}

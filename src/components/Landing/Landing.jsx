@@ -4,7 +4,7 @@ import HeroSection from "./HeroSection";
 import About from "./About";
 import heroBg from "../../assets/hero-bg.webp";
 import heroBgMobile from "../../assets/hero-mobile-bg.webp";
-import NUSColleges from "./NusColleges";
+// import NUSColleges from "./NusColleges";
 // import Achievements from "./Achievements";
 import StudySection from "./StudySection";
 import OurPartners from "./OurPartners";
@@ -49,7 +49,7 @@ const Landing = () => {
         <HeroSection />
       </div>
       <About />
-      <NUSColleges />
+      {/* <NUSColleges /> */}
       {/* <Achievements /> */}
       <StudySection />
       <OurPartners />

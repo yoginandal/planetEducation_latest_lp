@@ -40,7 +40,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
+    <section className="py-16 md:py-24 bg-slate-200">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -84,7 +84,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Testimonial Quote */}
-                    <blockquote className="flex-grow mb-8">
+                    <blockquote className="grow mb-8">
                       <p className="text-slate-700 leading-relaxed text-base">
                         "{testimonial.quote}"
                       </p>

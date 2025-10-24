@@ -1,7 +1,34 @@
 //import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { WordPullUp } from "@/components/ui/word-pull-up";
+import { WordFadeIn } from "@/components/ui/word-fade-in";
 import logo from "../../assets/logo.svg";
 
 const Thankyou = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    },
+  };
+
   return (
     <div className="min-h-screen bg-linear-to-br from-green-400 to-green-700 overflow-x-hidden">
       {/* Background Decorative Elements */}
@@ -97,22 +124,32 @@ const Thankyou = () => {
 
           {/* Text Content */}
           <div className="space-y-6 animate-fade-up">
-            <h1 className="text-6xl font-bold text-white mb-6">Thank You!</h1>
+            <WordPullUp
+              className="text-6xl font-bold text-white mb-6"
+              words="Thank You!"
+            />
 
-            <p className="text-xl text-white/90 leading-relaxed">
-              Your registration was successful.
-              <br />
-              We will get in touch with you soon.
-            </p>
+            <WordFadeIn
+              className="text-xl text-white/90 leading-relaxed"
+              words="Your registration was successful. We will get in touch with you soon"
+            />
 
             {/* Info Cards */}
-            <div className="grid md:grid-cols-2 gap-6 mt-10">
+            <motion.div
+              className="grid md:grid-cols-2 gap-6 mt-10"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {/* Check Our Website Card */}
-              <a
+              <motion.a
                 href="https://planeteducation.info"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-white transform hover:scale-105 transition-transform"
+                variants={cardVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <svg
                   className="w-12 h-12 mx-auto mb-4"
@@ -135,10 +172,14 @@ const Thankyou = () => {
                   <br />
                   about courses and upcoming events.
                 </p>
-              </a>
+              </motion.a>
 
               {/* Next Steps Card */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-white transform hover:scale-105 transition-transform">
+              <motion.div
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-white transform hover:scale-105 transition-transform"
+                variants={cardVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
                 <svg
                   className="w-12 h-12 mx-auto mb-4"
                   viewBox="0 0 24 24"
@@ -156,8 +197,8 @@ const Thankyou = () => {
                   <br />
                   and contact you within 24 hours.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
 

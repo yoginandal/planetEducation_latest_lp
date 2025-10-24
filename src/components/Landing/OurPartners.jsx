@@ -7,6 +7,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { WordPullUp } from "@/components/ui/word-pull-up";
+import { WordFadeIn } from "@/components/ui/word-fade-in";
 // import anu from "../../assets/logos/anu.png";
 // import brunel from "../../assets/logos/Brunel University London.png";
 // import charles from "../../assets/logos/Charles Darwin University Scholarships.png";
@@ -71,7 +73,7 @@ const GlobalPartnerships = () => {
   );
 
   return (
-    <section className="py-12 md:py-20 bg-slate-200">
+    <section className="py-12 md:py-20 bg-slate-50">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -82,9 +84,14 @@ const GlobalPartnerships = () => {
             </span>
             <span className="w-2 h-2 bg-slate-900 rounded-full"></span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Trusted by Leading Companies
-          </h2>
+          <WordPullUp
+            className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6"
+            words="Trusted by Leading Companies"
+          />
+          <WordFadeIn
+            className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto"
+            words="Partnering with industry leaders to drive innovation and research excellence across various domains"
+          />
         </div>
 
         {/* Logo Carousel */}
@@ -104,7 +111,7 @@ const GlobalPartnerships = () => {
                 key={index}
                 className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
               >
-                <div className="flex items-center justify-center h-32 bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md hover:scale-105 transition-all duration-300">
+                <div className="flex items-center justify-center h-32 bg-white border border-slate-200 rounded-lg p-6 hover:shadow-xl hover:scale-110 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1">
                   <img
                     src={partner.logo}
                     alt={partner.name}

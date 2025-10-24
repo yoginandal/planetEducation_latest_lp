@@ -108,11 +108,11 @@ const NUSProgramSection = () => {
   ];
 
   return (
-    <section className="relative py-16 md:py-24 bg-slate-50 overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-slate-200 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-200/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-200/10 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-bl from-blue-300/20 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-linear-to-tr from-purple-300/20 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -307,10 +307,7 @@ const NUSProgramSection = () => {
               <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-6 md:p-8 shadow-xl mb-6 md:mb-8">
                 <div className="space-y-6">
                   {keyDetails.map(
-                    (
-                      { icon: Icon, label, value, description, color },
-                      index
-                    ) => (
+                    ({ icon, label, value, description, color }, index) => (
                       <div
                         key={label}
                         className="flex items-center justify-between p-6 bg-linear-to-r from-white to-slate-50 rounded-2xl border border-slate-200/50 hover:border-slate-300 transition-all duration-300 hover:shadow-lg"
@@ -320,7 +317,9 @@ const NUSProgramSection = () => {
                           <div
                             className={`w-12 h-12 bg-linear-to-br ${color} rounded-full flex items-center justify-center`}
                           >
-                            <Icon className="w-6 h-6 text-white" />
+                            {React.createElement(icon, {
+                              className: "w-6 h-6 text-white",
+                            })}
                           </div>
                           <div>
                             <div className="text-slate-900 font-bold text-lg">

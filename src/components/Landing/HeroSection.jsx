@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,6 +17,28 @@ const HeroSection = () => {
     utm_term: "",
     utm_content: "",
   });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 }
+    },
+  };
 
   // Replace with your Google Apps Script Web App URL
   const GOOGLE_SCRIPT_URL =
@@ -171,7 +195,7 @@ const HeroSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors", // Important for Google Apps Script
         headers: {
@@ -210,107 +234,126 @@ const HeroSection = () => {
         className="relative top-68 sm:top-0 md:ml-auto bg-linear-to-br from-[#f6cb3d] via-[#f6d03d] to-[#f6cb3d]/90 p-6 pt-12 shadow-xl max-w-[380px] custom-div rounded-xl border border-yellow-300/20"
       >
         <div className="relative">
-          <div className="text-center mb-6">
+          <motion.div
+            className="text-center mb-6"
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <h3 className="text-xl font-bold text-black mb-1">
               Start Your Journey
             </h3>
             <p className="text-black/70 text-xs">Get expert guidance today</p>
-          </div>
+          </motion.div>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <input
+          <motion.form
+            className="space-y-4"
+            onSubmit={handleSubmit}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.input
               name="Name"
               value={formData.Name}
               onChange={handleChange}
               placeholder="Name"
-              className={`w-full bg-white p-3 rounded-lg border ${
-                errors.Name ? "border-red-400" : "border-gray-200"
+              className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
+                errors.Name ? "border-red-400" : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
+              variants={itemVariants}
             />
             {errors.Name && (
               <p className="text-red-600 text-xs mt-1">{errors.Name}</p>
             )}
 
-            <input
+            <motion.input
               name="email"
               value={formData.email}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Email"
               type="email"
-              className={`w-full bg-white p-3 rounded-lg border ${
-                errors.email ? "border-red-400" : "border-gray-200"
+              className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
+                errors.email ? "border-red-400" : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
+              variants={itemVariants}
             />
             {errors.email && (
               <p className="text-red-600 text-xs mt-1">{errors.email}</p>
             )}
 
-            <input
+            <motion.input
               name="phone"
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone"
               type="tel"
               maxLength="10"
-              className={`w-full bg-white p-3 rounded-lg border ${
-                errors.phone ? "border-red-400" : "border-gray-200"
+              className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
+                errors.phone ? "border-red-400" : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
+              variants={itemVariants}
             />
             {errors.phone && (
               <p className="text-red-600 text-xs mt-1">{errors.phone}</p>
             )}
 
-            <select
+            <motion.select
               name="qualification"
               value={formData.qualification}
               onChange={handleChange}
-              className={`w-full bg-white p-3 rounded-lg border ${
-                errors.qualification ? "border-red-400" : "border-gray-200"
+              className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
+                errors.qualification ? "border-red-400" : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
+              variants={itemVariants}
             >
               <option value="" disabled hidden>
                 Select Qualification
               </option>
               <option value="12th">12th</option>
               <option value="Graduate">Graduate</option>
-            </select>
+            </motion.select>
             {errors.qualification && (
               <p className="text-red-600 text-xs mt-1">
                 {errors.qualification}
               </p>
             )}
 
-            <input
+            <motion.input
               name="current_city"
               value={formData.current_city}
               onChange={handleChange}
               placeholder="City"
-              className={`w-full bg-white p-3 rounded-lg border ${
-                errors.current_city ? "border-red-400" : "border-gray-200"
+              className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
+                errors.current_city ? "border-red-400" : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
+              variants={itemVariants}
             />
             {errors.current_city && (
               <p className="text-red-600 text-xs mt-1">{errors.current_city}</p>
             )}
 
-            <button
+            <motion.button
               type="submit"
               disabled={isSubmitting}
               className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
                 isSubmitting
                   ? "bg-gray-500 cursor-not-allowed"
-                  : "bg-[#1a237e] hover:bg-[#1a237e]/90 hover:shadow-lg transform hover:-translate-y-0.5"
+                  : "bg-[#1a237e] hover:bg-[#1a237e]/90 hover:shadow-lg hover:-translate-y-1 hover:scale-105"
               }`}
+              variants={itemVariants}
+              whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+              whileTap={!isSubmitting ? { scale: 0.95 } : {}}
             >
               {isSubmitting ? "Submitting..." : "Register Now"}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
         </div>
       </div>
     </main>
