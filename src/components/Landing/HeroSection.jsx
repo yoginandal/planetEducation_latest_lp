@@ -36,7 +36,7 @@ const HeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4 }
+      transition: { duration: 0.4 },
     },
   };
 
@@ -259,7 +259,9 @@ const HeroSection = () => {
               onChange={handleChange}
               placeholder="Name"
               className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
-                errors.Name ? "border-red-400" : "border-gray-200 hover:border-gray-300"
+                errors.Name
+                  ? "border-red-400"
+                  : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
               variants={itemVariants}
@@ -276,7 +278,9 @@ const HeroSection = () => {
               placeholder="Email"
               type="email"
               className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
-                errors.email ? "border-red-400" : "border-gray-200 hover:border-gray-300"
+                errors.email
+                  ? "border-red-400"
+                  : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
               variants={itemVariants}
@@ -293,7 +297,9 @@ const HeroSection = () => {
               type="tel"
               maxLength="10"
               className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
-                errors.phone ? "border-red-400" : "border-gray-200 hover:border-gray-300"
+                errors.phone
+                  ? "border-red-400"
+                  : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
               variants={itemVariants}
@@ -307,7 +313,9 @@ const HeroSection = () => {
               value={formData.qualification}
               onChange={handleChange}
               className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
-                errors.qualification ? "border-red-400" : "border-gray-200 hover:border-gray-300"
+                errors.qualification
+                  ? "border-red-400"
+                  : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
               variants={itemVariants}
@@ -330,7 +338,9 @@ const HeroSection = () => {
               onChange={handleChange}
               placeholder="City"
               className={`w-full bg-white p-3 rounded-lg border transition-all duration-300 focus:scale-105 ${
-                errors.current_city ? "border-red-400" : "border-gray-200 hover:border-gray-300"
+                errors.current_city
+                  ? "border-red-400"
+                  : "border-gray-200 hover:border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
               required
               variants={itemVariants}
